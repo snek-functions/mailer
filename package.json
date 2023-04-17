@@ -1,5 +1,5 @@
 {
-  "name": "my-snek-function",
+  "name": "@snek-function/mailer",
   "baseURL": "https://schettn-special-umbrella-q66979jv7gh4w59-3000.preview.app.github.dev",
   "version": "0.0.1",
   "type": "module",
@@ -28,15 +28,18 @@
   "dependencies": {
     "@snek-at/function": "*",
     "@snek-at/function-cli": "*",
-    "@snek-at/function-server": "*"
+    "@snek-at/function-server": "*",
+    "nodemailer": "^6.9.1",
+    "nodemailer-plugin-inline-base64": "^2.1.1"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.7",
     "commitizen": "^4.2.5",
     "git-cz": "^4.9.0",
     "snek-query": "^0.0.53"
   },
   "scripts": {
-    "develop": "yarn sf develop",
+    "develop": "yarn sf develop -p 4020",
     "build": "yarn sf build"
   }
 }

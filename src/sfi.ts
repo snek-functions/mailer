@@ -1,30 +1,9 @@
-import {defineService} from '@snek-at/function'
+import { defineService } from "@snek-at/function";
 
-enum Colors {
-  Red = 'red',
-  Green = 'green',
-  Blue = 'blue'
-}
+import { sendMail } from "./internal/nodemailer";
 
-const helloWorld = () => {
-  return 'Hello world!'
-}
-
-export default defineService(
-  {
-    Query: {
-      helloWorld,
-      crashBecauseOfBoolean: (): boolean => {
-        return true
-      },
-      getFavColor: (): Colors => {
-        return Colors.Red
-      }
-    }
+export default defineService({
+  Mutation: {
+    sendMail,
   },
-  {
-    configureApp(app) {
-      return app
-    }
-  }
-)
+});
