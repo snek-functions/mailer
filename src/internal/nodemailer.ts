@@ -44,9 +44,9 @@ async function createConnection({
 // SEND MAIL
 export async function sendMail(
   mailOptions: MailOptions,
-  smtp: SMTPOptions
+  smtpOptions: SMTPOptions
 ): Promise<SentMessageInfo> {
-  const connection = await createConnection(smtp);
+  const connection = await createConnection(smtpOptions);
   connection.use("compile", inlineBase64({ cidPrefix: "snek_" }));
 
   console.log(mailOptions);
