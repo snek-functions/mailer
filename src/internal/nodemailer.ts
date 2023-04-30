@@ -1,15 +1,7 @@
 import nodemailer from "nodemailer";
 import inlineBase64 from "nodemailer-plugin-inline-base64";
 import { SentMessageInfo } from "nodemailer/lib/smtp-connection";
-
-export interface MailOptions {
-  from: string;
-  to: string[];
-  replyTo?: string;
-  subject: string;
-  text?: string;
-  html: string;
-}
+import { MailOptions } from "./types";
 
 export interface SMTPOptions {
   host: string;

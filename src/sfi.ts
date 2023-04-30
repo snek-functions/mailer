@@ -1,9 +1,13 @@
 import { defineService } from "@snek-at/function";
 
-import { sendMail } from "./internal/nodemailer";
+import { sendMail as sendMailSMTP } from "./internal/nodemailer";
+import { sendMail as sendMailAzure } from "./internal/azure";
+import { sendMail as sendMailGoogle } from "./internal/google";
 
 export default defineService({
   Mutation: {
-    sendMail,
+    sendMailSMTP,
+    sendMailAzure,
+    sendMailGoogle,
   },
 });
